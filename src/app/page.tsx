@@ -1,3 +1,5 @@
 export default function Home() {
-  return <h1>GeekCAMP neco</h1>;
+
+  return <h1>GeekCAMP 2</h1>;
+
 }
