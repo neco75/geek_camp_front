@@ -1,5 +1,9 @@
+import Header from "@/components/Header";
 export default function Home() {
 
-  return <h1>GeekCAMP 2</h1>;
+  return (
+
+    <Header />
+  );
 
 }
