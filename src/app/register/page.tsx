@@ -1,4 +1,6 @@
-import React from "react";
+import React from 'react';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 function Page() {
   return (
@@ -80,6 +82,7 @@ function Page() {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 }
