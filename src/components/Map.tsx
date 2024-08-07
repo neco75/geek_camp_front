@@ -21,9 +21,10 @@ const center = {
 const zoom = 13;
 
 function Map() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    setIsMobile(window.innerWidth <= 1024);
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 1024);
     };
