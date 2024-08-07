@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Map from "./Map";
 
 function Main() {
   return (
@@ -29,8 +30,8 @@ function Main() {
       </form>
       <div className="m-5 w-full">
         <h3 className="text-lg">Map</h3>
-        <div className="border-2 border-gray-500 min-h-96 max-h-96 overflow-y-scroll">
-          <p>ここにマップを配置</p>
+        <div className="border-2 border-gray-500  overflow-y-scroll">
+          <Map />
         </div>
       </div>
     </div>
