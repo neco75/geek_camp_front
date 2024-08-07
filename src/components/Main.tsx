@@ -6,7 +6,7 @@ function Main() {
   return (
     <div
       id="main-contents"
-      className="text-center p-5 flex justify-center w-full"
+      className="text-center p-5 flex flex-col lg:flex-row items-center justify-center w-full"
     >
       <form className="m-5 w-full max-w-xs flex flex-col justify-center">
         <div className="mb-5">
