@@ -4,15 +4,18 @@ import React, { useState, useEffect } from "react";
 
 function Background() {
   const [imageUrl, setImageUrl] = useState(
-    "https://picsum.photos/1980/1080?blur=5"
+    `/images/${Math.floor(Math.random() * 30) + 1}-min.jpg`
   );
+  const [fade, setFade] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setImageUrl(
-        `https://picsum.photos/1980/1080?blur=5&random=${Math.random()}`
-      );
-    }, 10000);
+      setFade(true);
+      setTimeout(() => {
+        setImageUrl(`/images/${Math.floor(Math.random() * 30) + 1}-min.jpg`);
+        setFade(false);
+      }, 1000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
@@ -27,8 +30,9 @@ function Background() {
           width: "100%",
           height: "100%",
           backgroundImage: `url(${imageUrl})`,
-          opacity: 0.5,
           zIndex: -1,
+          transition: "opacity 1s",
+          opacity: fade ? 0 : 0.3,
         }}
       ></div>
     </>
