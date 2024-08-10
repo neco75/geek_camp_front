@@ -13,7 +13,7 @@ function Main() {
   const handleSubmit = (e: React.FormEvent) => {
     //ここでAPIを叩いてデータを取得する useEffectを使う
     e.preventDefault();
-    setPlace("東京");//ここに取得したもの
+    setPlace("東京"); //ここに取得したもの
     setDetail("東京都は、日本の首都であり、日本最大の都市です。");
   };
 
@@ -24,7 +24,7 @@ function Main() {
         className="text-center p-5 flex flex-col lg:flex-row items-center justify-center w-full"
       >
         <form
-          className="m-5 w-full max-w-xs rounded-lg flex flex-col justify-center bg-white rounded-lg shadow"
+          className="m-5 w-full max-w-xs rounded-lg flex flex-col justify-center bg-white shadow"
           onSubmit={handleSubmit}
         >
           <div className="mb-5">
@@ -39,7 +39,7 @@ function Main() {
           <DropdownList />
           <button
             type="submit"
-            className="w-40 mb-5 mx-auto text-white bg-black hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+            className="w-40 mb-5 mx-auto text-white bg-black hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
           >
             旅行先を決める
           </button>
