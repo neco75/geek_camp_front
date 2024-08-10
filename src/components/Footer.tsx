@@ -22,22 +22,26 @@ function Footer() {
               </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                  <a href="#" className="hover:underline">
+                  <a href="/" className="hover:underline">
                     大熊佑輔
                   </a>
                 </li>
                 <li className="mb-4">
-                  <a href="#" className="hover:underline">
+                  <a
+                    href="https://github.com/neco75"
+                    className="hover:underline"
+                    target="_blank"
+                  >
                     neco
                   </a>
                 </li>
                 <li className="mb-4">
-                  <a href="#" className="hover:underline">
+                  <a href="/" className="hover:underline">
                     チャーリーさん
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:underline">
+                  <a href="/" className="hover:underline">
                     めぐる
                   </a>
                 </li>
