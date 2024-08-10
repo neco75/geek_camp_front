@@ -6,7 +6,7 @@ export default function Home() {
       <main className="flex flex-col items-center justify-center min-h-screen">
         <div className="relative w-96 h-48">
           <Image
-            src="/randjourney-logo-first.png"
+            src="/RJlogo-vertical.png"
             alt="FlowBite Logo"
             fill
             style={{ objectFit: "contain" }}

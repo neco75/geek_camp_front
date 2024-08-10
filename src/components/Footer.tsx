@@ -6,9 +6,9 @@ function Footer() {
     <footer className="bg-gray-200 dark:bg-gray-800">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex ">
-          <div className="relative w-60 h-32">
+          <div className="relative w-60 h-30">
             <Image
-              src="/rand-jouney-logo-full.png"
+              src="/RJlogo-horizontal.png"
               alt="FlowBite Logo"
               fill
               style={{ objectFit: "contain" }}
