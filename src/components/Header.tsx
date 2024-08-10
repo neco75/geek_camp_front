@@ -10,7 +10,7 @@ function Header() {
           <div className="relative w-40 h-12">
             <Link href="/">
               <Image
-                src="/rand-jouney-logo-full.png"
+                src="/RJlogo-horizontal.png"
                 className="mr-3 object-contain"
                 alt="ランジャニちゃん"
                 fill
