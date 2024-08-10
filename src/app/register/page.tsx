@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 function Page() {
   return (
@@ -67,7 +68,9 @@ function Page() {
                     Your address
                   </label>
                   <div className="flex items-center bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-                    <span className="px-3 rounded-lg font-medium text-gray-900 dark:text-white">〒</span>
+                    <span className="px-3 rounded-lg font-medium text-gray-900 dark:text-white">
+                      〒
+                    </span>
                     <div className="h-5 border-l border-gray-300 dark:border-gray-600"></div>
                     <input
                       type="text"
@@ -88,12 +91,12 @@ function Page() {
                 </button>
                 <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                   Already have an account?{" "}
-                  <a
-                    href="#"
+                  <Link
+                    href="/signin"
                     className="font-medium text-primary-600 hover:underline dark:text-primary-500"
                   >
                     Login here
-                  </a>
+                  </Link>
                 </p>
               </form>
             </div>
@@ -105,4 +108,3 @@ function Page() {
 }
 
 export default Page;
-
