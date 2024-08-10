@@ -24,29 +24,28 @@ function Main() {
         className="text-center p-5 flex flex-col lg:flex-row items-center justify-center w-full"
       >
         <form
-          className="m-5 w-full max-w-xs rounded-lg flex flex-col justify-center bg-white shadow"
+          className="m-5 w-full border max-w-xs shadow rounded-2xl flex flex-col justify-center bg-white shadow"
           onSubmit={handleSubmit}
         >
           <div className="mb-5">
-            <p className="text-lg mt-5 bmb-2">あなたの現在地</p>
+            <p className="text-base mt-6 mb-3 bmb-2 font-medium">あなたの現在地</p>
             <input
               type="text"
               value={address}
               onChange={(e) => setAddress(e.target.value)}
-              className="text-center border-2 border-r-2  w-40 border-gray-500"
+              className="bg-gray-50 shadow mb-5 text-center border border-gray-300 rounded-lg w-40 focus:ring-blue-500"
             />
           </div>
           <DropdownList />
           <button
             type="submit"
-            className="w-40 mb-5 mx-auto text-white bg-black hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
+            className="w-40 mb-5 shadow mx-auto text-white bg-gray-700 transition hover:bg-black focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
           >
-            旅行先を決める
+            Let's jouney  !
           </button>
         </form>
         <div className="m-5 w-full">
-          <h3 className="text-lg">Map</h3>
-          <div className="border-2 border-gray-500 overflow-y-scroll">
+          <div className="border-2 shadow border-gray-500">
             <LoadScript
               googleMapsApiKey={
                 process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? ""
@@ -67,16 +66,16 @@ function Main() {
         id="detail-text"
         className="flex flex-col items-center justify-center w-full p-5"
       >
-        <div className="w-full max-w-screen-xl bg-slate-200/60 p-5 rounded-lg">
-          <h2 className="text-2xl font-bold text-center">旅行先の詳細</h2>
+        <div className="w-full m-10 max-w-screen-xl bg-gray-100 p-5 border shadow rounded-3xl">
+          <h2 className="text-3xl font-bold text-center">おすすめの旅行先</h2>
           <ul className="text-left p-5">
             <li className="mb-5  items-center">
-              <h3 className="text-2xl">場所</h3>
-              <p className="text-lg">{place}</p>
+              <h3 className="text-2xl font-semibold">場所</h3>
+              <p className="text-lg mt-3">{place}</p>
             </li>
             <li className="mb-5  items-center">
-              <h3 className="text-2xl">詳細</h3>
-              <p className="text-lg">{detail}</p>
+              <h3 className="text-2xl font-semibold">詳細</h3>
+              <p className="text-lg mt-3">{detail}</p>
             </li>
           </ul>
         </div>

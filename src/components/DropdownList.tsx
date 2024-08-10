@@ -32,16 +32,16 @@ const DropdownList: React.FC = () => {
   const arrowClassName = `select-arrow ${isArrowActive ? 'active' : ''}`;
 
   return (
-    <div className="container mb-5 w-full tect-container">
-      <h2>行きたい地方を選択してください</h2>
-      <div className="mt-2 rounded-lg shadow w-40 flex justify-center mx-auto">
+    <div className="container mb-5 w-full text-container font-medium">
+      <h2>地方を選択してください</h2>
+      <div className="border border-gray-300 shadow mt-3 mb-6 bmb-2 rounded-lg w-40 flex justify-center mx-auto">
     
         <select
           value={selectedOption?.value || ''}
           onChange={handleSelectOption}
           onFocus={() => setArrowActive(true)}
           onBlur={() => setArrowActive(false)}
-          className='w-40 text-center '
+          className='bg-gray-50 w-40 text-center rounded-lg'
         >
           {options.map((option) => (
             <option key={option.value} value={option.value}>
