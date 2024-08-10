@@ -6,20 +6,14 @@ function Footer() {
     <footer className="bg-gray-200 dark:bg-gray-800">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex ">
-          <div className="mb-6 md:mb-0">
-            <a href="https://flowbite.com/" className="flex items-center">
+            <div className="relative w-60 h-32"> 
               <Image
-                src="https://flowbite.com/docs/images/logo.svg"
-                className="h-8 me-3"
+                src="/rand-jouney-logo-full.png"
                 alt="FlowBite Logo"
-                width={32}
-                height={32}
+                layout="fill"  
+                objectFit="contain"  
               />
-              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-                Flowbite
-              </span>
-            </a>
-          </div>
+            </div>
           <div className="flex-grow"></div>
           <div className="grid  gap-8 sm:gap-6 ">
             <div>

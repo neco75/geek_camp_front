@@ -26,10 +26,10 @@ function Map() {
   useEffect(() => {
     setIsMobile(window.innerWidth <= 1024);
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 1024);
+      setIsMobile(window.innerWidth <= 1024); //ismobileに状態が入る
     };
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", handleResize); //pageが動いた時に判定してる
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -37,10 +37,10 @@ function Map() {
 
   return (
     <LoadScript
-      googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? ""}
+      googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? ""} //envファイル呼び出し
     >
       <GoogleMap
-        mapContainerStyle={isMobile ? containerStyleMobile : containerStyle}
+        mapContainerStyle={isMobile ? containerStyleMobile : containerStyle} //if文みたいな
         center={center}
         zoom={zoom}
       >
