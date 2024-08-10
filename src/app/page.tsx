@@ -4,13 +4,12 @@ export default function Home() {
   return (
     <>
       <main className="flex flex-col items-center justify-center min-h-screen">
-             
-        <div className="relative w-96 h-48"> 
+        <div className="relative w-96 h-48">
           <Image
             src="/randjourney-logo-first.png"
             alt="FlowBite Logo"
-            layout="fill"  
-            objectFit="contain"  
+            fill
+            style={{ objectFit: "contain" }}
           />
         </div>
         <div className="mt-5">
