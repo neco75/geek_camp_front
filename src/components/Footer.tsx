@@ -3,7 +3,7 @@ import Image from "next/image";
 
 function Footer() {
   return (
-    <footer className="bg-gray-200 dark:bg-gray-800">
+    <footer className="bg-gray-200">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex ">
           <div className="relative w-60 h-30">
@@ -19,10 +19,10 @@ function Footer() {
           <div className="flex-grow"></div>
           <div className="grid  gap-8 sm:gap-6 ">
             <div>
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">
                 Developer name
               </h2>
-              <ul className="text-gray-500 dark:text-gray-400 font-medium">
+              <ul className="text-gray-500 font-medium">
                 <li className="mb-4">
                   <a href="/" className="hover:underline">
                     大熊佑輔
