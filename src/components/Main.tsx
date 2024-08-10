@@ -1,12 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
+import { LoadScript } from "@react-google-maps/api";
 import Map from "./Map";
 
 function Main() {
   const [place, setPlace] = useState("");
   const [detail, setDetail] = useState("");
-  const [address, setAddress] = useState("00000000");
+  const [address, setAddress] = useState("1001701");
 
   const handleSubmit = (e: React.FormEvent) => {
     //ここでAPIを叩いてデータを取得する useEffectを使う
@@ -44,7 +45,13 @@ function Main() {
         <div className="m-5 w-full">
           <h3 className="text-lg">Map</h3>
           <div className="border-2 border-gray-500 overflow-y-scroll">
-            <Map />
+            <LoadScript
+              googleMapsApiKey={
+                process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? ""
+              }
+            >
+              <Map address={address} />
+            </LoadScript>
           </div>
         </div>
       </div>
@@ -55,13 +62,13 @@ function Main() {
         <div className="w-full max-w-screen-xl bg-slate-200/60 p-5 rounded-lg">
           <h2 className="text-2xl font-bold text-center">旅行先の詳細</h2>
           <ul className="text-left p-5">
-            <li className="mb-5 flex items-center">
-              <h3 className="text-lg">場所 : </h3>
-              <p className="text-sm">{place}</p>
+            <li className="mb-5  items-center">
+              <h3 className="text-2xl">場所</h3>
+              <p className="text-lg">{place}</p>
             </li>
-            <li className="mb-5 flex items-center">
-              <h3 className="text-lg">詳細 : </h3>
-              <p className="text-sm">{detail}</p>
+            <li className="mb-5  items-center">
+              <h3 className="text-2xl">詳細</h3>
+              <p className="text-lg">{detail}</p>
             </li>
           </ul>
         </div>
