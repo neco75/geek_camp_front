@@ -14,8 +14,8 @@ export default function Home() {
             priority
           />
         </div>
-        <div className="mt-5">
-          <p>ランダムに旅先を決めるアプリです</p>
+        <div className="mt-5 text-2xl font-semibold">
+          <p>~気まぐれな旅をしよう~</p>
         </div>
         <Main />
       </main>
