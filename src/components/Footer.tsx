@@ -12,6 +12,8 @@ function Footer() {
               alt="FlowBite Logo"
               fill
               style={{ objectFit: "contain" }}
+              sizes="(max-width: 768px) 100vw, 60px"
+              priority
             />
           </div>
           <div className="flex-grow"></div>

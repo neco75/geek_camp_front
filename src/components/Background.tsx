@@ -3,9 +3,7 @@
 import React, { useState, useEffect } from "react";
 
 function Background() {
-  const [imageUrl, setImageUrl] = useState(
-    `/images/${Math.floor(Math.random() * 30) + 1}-min.jpg`
-  );
+  const [imageUrl, setImageUrl] = useState(`/images/1-min.jpg`);
   const [fade, setFade] = useState(false);
 
   useEffect(() => {

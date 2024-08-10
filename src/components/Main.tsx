@@ -51,6 +51,12 @@ function Main() {
               googleMapsApiKey={
                 process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? ""
               }
+              libraries={["places"]}
+              loadingElement={<div>Loading...</div>}
+              onLoad={() => console.log("Google Maps script loaded")}
+              onError={(error) =>
+                console.error("Error loading Google Maps script", error)
+              }
             >
               <Map address={address} />
             </LoadScript>

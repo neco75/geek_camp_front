@@ -10,6 +10,8 @@ export default function Home() {
             alt="FlowBite Logo"
             fill
             style={{ objectFit: "contain" }}
+            sizes="(max-width: 768px) 100vw, 60px"
+            priority
           />
         </div>
         <div className="mt-5">
