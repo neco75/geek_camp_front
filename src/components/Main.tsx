@@ -8,7 +8,7 @@ import DropdownList from "./DropdownList";
 function Main() {
   const [place, setPlace] = useState("");
   const [detail, setDetail] = useState("");
-  const [address, setAddress] = useState("1001701");
+  const [address, setAddress] = useState("東京都");
   const [regionId, setRegionId] = useState("0");
 
   const handleSubmit = async (e: React.FormEvent) => {
