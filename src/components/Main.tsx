@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
-import { LoadScript } from "@react-google-maps/api";
+import React, { useState, useCallback } from "react";
+import { useJsApiLoader } from "@react-google-maps/api";
 import Map from "./Map";
 import DropdownList from "./DropdownList";
 
@@ -17,6 +17,11 @@ function Main() {
     setDetail("東京都は、日本の首都であり、日本最大の都市です。");
   };
 
+  const { isLoaded } = useJsApiLoader({
+    id: "google-map-script",
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? "",
+  });
+
   return (
     <>
       <div
@@ -28,7 +33,9 @@ function Main() {
           onSubmit={handleSubmit}
         >
           <div className="mb-5">
-            <p className="text-base mt-6 mb-3 bmb-2 font-medium">あなたの現在地</p>
+            <p className="text-base mt-6 mb-3 bmb-2 font-medium">
+              あなたの現在地
+            </p>
             <input
               type="text"
               value={address}
@@ -41,25 +48,11 @@ function Main() {
             type="submit"
             className="w-40 mb-5 shadow mx-auto text-white bg-gray-700 transition hover:bg-black focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
           >
-            Let's jouney  !
+            Let&apos;s jouney !
           </button>
         </form>
         <div className="m-5 w-full">
-          <div className="border-2 shadow border-gray-500">
-            <LoadScript
-              googleMapsApiKey={
-                process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? ""
-              }
-              libraries={["places"]}
-              loadingElement={<div>Loading...</div>}
-              onLoad={() => console.log("Google Maps script loaded")}
-              onError={(error) =>
-                console.error("Error loading Google Maps script", error)
-              }
-            >
-              <Map address={address} />
-            </LoadScript>
-          </div>
+          {isLoaded ? <Map address={address} /> : <div>Loading...</div>}
         </div>
       </div>
       <div
