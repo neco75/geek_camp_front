@@ -5,8 +5,11 @@ interface Option {
   label: string;
 }
 
-const DropdownList: React.FC = () => {
+interface DropdownListProps {
+  onSelect: (value: string) => void;
+}
 
+const DropdownList: React.FC<DropdownListProps> = ({ onSelect }) => {
   const options: Option[] = [
       { value: '0', label: '日本全国' },
       { value: '1', label: '北海道' },
@@ -17,40 +20,31 @@ const DropdownList: React.FC = () => {
       { value: '6', label: '中国' },
       { value: '7', label: '四国' },
       { value: '8', label: '九州' },
-    ];
-    
-  const [selectedOption, setSelectedOption] = useState<Option | null>(options[0]);
-  const [isArrowActive, setArrowActive] = useState(false);
+  ];
 
+  const [selectedOption, setSelectedOption] = useState<Option | null>(options[0]);
 
   const handleSelectOption = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedValue = event.target.value;
-    const selected = options.find((option) => option.value === selectedValue);
-    setSelectedOption(selected || null);
+    setSelectedOption(options.find(option => option.value === selectedValue) || null);
+    onSelect(selectedValue);
   };
 
-  const arrowClassName = `select-arrow ${isArrowActive ? 'active' : ''}`;
-
   return (
-    <div className="container mb-5 w-full tect-container">
+    <div className="container mb-5 w-full text-container">
       <h2>行きたい地方を選択してください</h2>
       <div className="mt-2 rounded-lg shadow w-40 flex justify-center mx-auto">
-    
         <select
           value={selectedOption?.value || ''}
           onChange={handleSelectOption}
-          onFocus={() => setArrowActive(true)}
-          onBlur={() => setArrowActive(false)}
-          className='w-40 text-center '
+          className='w-40 text-center'
         >
-          {options.map((option) => (
+          {options.map(option => (
             <option key={option.value} value={option.value}>
               {option.label}
             </option>
           ))}
         </select>
-        <div className={arrowClassName}></div>
-        
       </div>
     </div>
   );
