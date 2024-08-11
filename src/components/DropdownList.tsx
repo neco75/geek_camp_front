@@ -21,8 +21,9 @@ const DropdownList: React.FC<DropdownListProps> = ({ onSelect }) => {
       { value: '7', label: '四国' },
       { value: '8', label: '九州' },
   ];
-
+  
   const [selectedOption, setSelectedOption] = useState<Option | null>(options[0]);
+  const [isArrowActive, setArrowActive] = useState(false);
 
   const handleSelectOption = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedValue = event.target.value;

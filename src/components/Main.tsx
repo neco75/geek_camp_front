@@ -49,7 +49,7 @@ function Main() {
         className="text-center p-5 flex flex-col lg:flex-row items-center justify-center w-full"
       >
         <form
-          className="m-5 w-full border max-w-xs shadow rounded-2xl flex flex-col justify-center bg-white shadow"
+          className="m-5 w-full border max-w-xs shadow rounded-2xl flex flex-col justify-center bg-white"
           onSubmit={handleSubmit}
         >
           <div className="mb-5">
