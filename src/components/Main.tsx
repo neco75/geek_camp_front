@@ -9,7 +9,9 @@ function Main() {
   const [place, setPlace] = useState("");
   const [detail, setDetail] = useState("");
   const [address, setAddress] = useState("東京都");
+  const [prefectures, setPrefectures] = useState("東京都");
   const [regionId, setRegionId] = useState("0");
+  const [festivalName, setFestivalName] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,8 +31,10 @@ function Main() {
 
       const result = await response.json();
       setPlace(result.data.prefectures + " " + result.data.municipalities);
-      setDetail(result.data.detail || "詳細情報はありません。");
+      setDetail(result.data.detail);
       setAddress(result.data.prefectures+result.data.municipalities);
+      setPrefectures(result.data.prefectures);
+      setFestivalName(result.data.festivalName)
 
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -80,11 +84,11 @@ function Main() {
         className="flex flex-col items-center justify-center w-full p-5"
       >
         <div className="w-full m-10 max-w-screen-xl bg-gray-100 p-5 border shadow rounded-3xl">
-          <h2 className="text-3xl font-bold text-center">おすすめの旅行先</h2>
+          <h2 className="text-3xl font-bold text-center">{prefectures}のおすすめスポット</h2>
           <ul className="text-left p-5">
             <li className="mb-5  items-center">
-              <h3 className="text-2xl font-semibold">場所</h3>
-              <p className="text-lg mt-3">{place}</p>
+              <h3 className="text-2xl font-semibold">スポット名</h3>
+              <p className="text-lg mt-3">{festivalName}</p>
             </li>
             <li className="mb-5  items-center">
               <h3 className="text-2xl font-semibold">詳細</h3>
