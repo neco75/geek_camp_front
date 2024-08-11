@@ -3,7 +3,7 @@ import Image from "next/image";
 
 function Footer() {
   return (
-    <footer className="bg-gray-200">
+    <footer className="bg-gray-100 border-t border-gray-200">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex ">
           <div className="relative w-60 h-30">
@@ -22,7 +22,7 @@ function Footer() {
               <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">
                 Developer name
               </h2>
-              <ul className="text-gray-500 font-medium">
+              <ul className="text-gray-700 font-medium">
                 <li className="mb-4">
                   <a href="/" className="hover:underline">
                     大熊佑輔
@@ -43,7 +43,7 @@ function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="/" className="hover:underline">
+                  <a href="https://qiita.com/meg2dayo" className="hover:underline">
                     めぐる
                   </a>
                 </li>

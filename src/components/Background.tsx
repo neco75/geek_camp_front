@@ -20,7 +20,7 @@ function Background() {
 
   return (
     <>
-      <div
+      <div className="blur-sm"
         style={{
           position: "absolute",
           top: 0,
@@ -29,7 +29,7 @@ function Background() {
           height: "100%",
           backgroundImage: `url(${imageUrl})`,
           zIndex: -1,
-          transition: "opacity 1s",
+          transition: "opacity 1.3s",
           opacity: fade ? 0 : 0.3,
         }}
       ></div>

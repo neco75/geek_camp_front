@@ -8,8 +8,8 @@ import Background from "@/components/Background";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "チーム25(仮)",
-  description: "チーム25(仮)の作品です",
+  title: "ランジャニちゃん",
+  description: "どこに行くか分からない、気まぐれな旅をしよう",
 };
 
 export default function RootLayout({
