@@ -9,12 +9,32 @@ function Main() {
   const [place, setPlace] = useState("");
   const [detail, setDetail] = useState("");
   const [address, setAddress] = useState("1001701");
+  const [regionId, setRegionId] = useState("0");
 
-  const handleSubmit = (e: React.FormEvent) => {
-    //ここでAPIを叩いてデータを取得する useEffectを使う
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setPlace("東京"); //ここに取得したもの
-    setDetail("東京都は、日本の首都であり、日本最大の都市です。");
+
+    try {
+      const response = await fetch("http://localhost:8000/api/get-random-data", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ region_id: regionId }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const result = await response.json();
+      setPlace(result.data.prefectures + " " + result.data.municipalities);
+      setDetail(result.data.detail || "詳細情報はありません。");
+      setAddress(result.data.prefectures+result.data.municipalities);
+
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
   };
 
   const { isLoaded } = useJsApiLoader({
@@ -43,7 +63,7 @@ function Main() {
               className="bg-gray-50 shadow mb-5 text-center border border-gray-300 rounded-lg w-40 focus:ring-blue-500"
             />
           </div>
-          <DropdownList />
+          <DropdownList onSelect={(value) => setRegionId(value)} />
           <button
             type="submit"
             className="w-40 mb-5 shadow mx-auto text-white bg-gray-700 transition hover:bg-black focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "

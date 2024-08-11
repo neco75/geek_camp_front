@@ -5,8 +5,11 @@ interface Option {
   label: string;
 }
 
-const DropdownList: React.FC = () => {
+interface DropdownListProps {
+  onSelect: (value: string) => void;
+}
 
+const DropdownList: React.FC<DropdownListProps> = ({ onSelect }) => {
   const options: Option[] = [
       { value: '0', label: '日本全国' },
       { value: '1', label: '北海道' },
@@ -17,19 +20,15 @@ const DropdownList: React.FC = () => {
       { value: '6', label: '中国' },
       { value: '7', label: '四国' },
       { value: '8', label: '九州' },
-    ];
-    
-  const [selectedOption, setSelectedOption] = useState<Option | null>(options[0]);
-  const [isArrowActive, setArrowActive] = useState(false);
+  ];
 
+  const [selectedOption, setSelectedOption] = useState<Option | null>(options[0]);
 
   const handleSelectOption = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedValue = event.target.value;
-    const selected = options.find((option) => option.value === selectedValue);
-    setSelectedOption(selected || null);
+    setSelectedOption(options.find(option => option.value === selectedValue) || null);
+    onSelect(selectedValue);
   };
-
-  const arrowClassName = `select-arrow ${isArrowActive ? 'active' : ''}`;
 
   return (
     <div className="container mb-5 w-full text-container font-medium">
@@ -43,14 +42,12 @@ const DropdownList: React.FC = () => {
           onBlur={() => setArrowActive(false)}
           className='bg-gray-50 w-40 text-center rounded-lg'
         >
-          {options.map((option) => (
+          {options.map(option => (
             <option key={option.value} value={option.value}>
               {option.label}
             </option>
           ))}
         </select>
-        <div className={arrowClassName}></div>
-        
       </div>
     </div>
   );
